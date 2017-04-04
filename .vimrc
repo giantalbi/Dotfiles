@@ -6,7 +6,7 @@ set number
 
 set softtabstop=0 noexpandtab
 set shiftwidth=4
-
+set clipboard=unnamedplus
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
