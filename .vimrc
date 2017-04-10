@@ -3,7 +3,7 @@ filetype off
 set wildmenu
 set path+=**
 set number
-
+set cursorline
 set clipboard=unnamedplus
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
@@ -15,13 +15,13 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
-Plugin 'marcopaganini/termschool-vim-theme'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'tomasiser/vim-code-dark'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Call after the plugin initiation
 syntax enable
-colorscheme Monokai
+colorscheme codedark
 let NERDTreeDirArrows=0
