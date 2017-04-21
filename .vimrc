@@ -24,6 +24,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tomasiser/vim-code-dark'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -32,5 +34,5 @@ filetype plugin indent on    " required
 syntax enable
 colorscheme codedark
 let NERDTreeDirArrows=0
-let g:nerdtree_tabs__open_on_console_startup=1
+let g:nerdtree_tabs_open_on_console_startup=1
 
