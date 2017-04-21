@@ -35,4 +35,3 @@ syntax enable
 colorscheme codedark
 let NERDTreeDirArrows=0
 let g:nerdtree_tabs_open_on_console_startup=1
-
