@@ -27,11 +27,13 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tomasiser/vim-code-dark'
+Plugin 'chriskempson/base16-vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Call after the plugin initiation
 syntax enable
-colorscheme codedark
+colorscheme base16-seti
 let NERDTreeDirArrows=0
 let g:nerdtree_tabs_open_on_console_startup=1
