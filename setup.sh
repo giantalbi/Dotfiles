@@ -2,7 +2,8 @@
 
 # Setup for Dotfiles
 
-pkg="i3-gaps i3blocks ranger arandr rxvt-unicode w3m rofi feh wmctrl imagemagick"
+pkg="i3-gaps i3blocks ranger arandr w3m rofi feh wmctrl imagemagick mpd ncmpcpp"
+aurPkg="rxvt-unicode-better-wheel-scrolling"
 
 #mkdir ~/.scripts
 #mkdir ~/.screenlayout
@@ -27,8 +28,13 @@ done
 
 if [ -z ${s} ]
 then
-    read -p "Enter your package manager's install command: " installCommand
-    eval ${installCommand} ${pkg}
+    #read -p "Enter your package manager's install command: " installCommand
+    #eval ${installCommand} ${pkg}
+    echo "Installing official packages"
+    sudo pacman -S ${pkg}
+
+    echo "Installing AUR packages"
+    yaourt -S ${aurPkg}
 fi
 
 # Link Dotfiles
@@ -67,6 +73,14 @@ ln -s ~/Dotfiles/.vimrc ~/
 [ -d ~/.config/ranger ] && [ ! -L ~/.config/ranger ] && echo "Moving old \".config/ranger\"" && mv ~/.config/ranger ~/.dotfiles.old/.config
 [ ! -L ~/.config/ranger ] && ln -s ~/Dotfiles/.config/ranger/ ~/.config/ranger
 
+# rofi
+[ -d ~/.config/rofi ] && [ ! -L ~/.config/rofi ] && echo "Moving old \".config/rofi\"" && mv ~/.config/rofi ~/.dotfiles.old/.config
+[ ! -L ~/.config/ranger ] && ln -s ~/Dotfiles/.config/ranger/ ~/.config/rofi
+
+# mpd
+[ -d ~/.config/mpd ] && [ ! -L ~/.config/mpd ] && echo "Moving old \".config/mpd\"" && mv ~/.config/mpd ~/.dotfiles.old/.config
+[ ! -L ~/.config/mpd ] && ln -s ~/Dotfiles/.config/mpd/ ~/.config/mpd
+
 
 [ -d ~/.scripts ] && [ ! -L ~/.scripts ] && echo "Moving old \".scripts\"" && mv ~/.scripts ~/.dotfiles.old/.config
 [ ! -L ~/.scripts ] && ln -s ~/Dotfiles/.scripts/ ~/.scripts
@@ -85,3 +99,9 @@ chmod +x ~/.scripts/i3blocks-contrib/shutdown_menu/shutdown_menu
 # Vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+# MPD
+
+# Uncomments the tcp-module in pulse audio
+sudo sed -i '/#load-module module-native-protocol-tcp/c\load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1' /etc/pulse/default.pa 
+systemctl --user enable mpd.service 
+systemctl --user start mpd.service 

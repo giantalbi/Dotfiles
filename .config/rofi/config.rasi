@@ -1,0 +1,29 @@
+configuration {
+	modi: "run,drun,ssh";
+	lines: 15;
+	columns: 1;
+	font: "Source Code Pro 12";
+	bw: 0;
+	location: 0;
+	padding: 10;
+	sidebar-mode: true;
+	m: "-1";
+	line-margin: 10;
+	separator-style: "solid";
+	hide-scrollbar: false;
+	fullscreen: false;
+	fake-transparency: true;
+        color-window: "#2b2e37, #2b2e37, #4989d7";
+        color-normal: "#2b2e37, #c1c1c1, #2b2e37, #2b2e37, #4989d7";
+        color-active: "#2b2e37, #ffffff, #2b2e37, #2b2e37, #4d6b8e";
+        color-urgent: "#2b2e37, #dc322f, #2b2e37, #2b2e37, #dc322f";
+    }
+
+
+/*# define rofi_bg #2b2e37*/
+/*# define rofi_fg #c1c1c1*/
+/*# define rofi_border #161619*/
+/*# define rofi_fg_hi #ffffff*/
+/*# define rofi_blue #4989d7*/
+/*# define rofi_blue2 #4d6b8e*/
+/*# define rofi_red #dc322f*/
